@@ -27,19 +27,6 @@ st.line_chart(gdp_df, x="Country", y="GDP")
 # -----------------------------------------------------------------------------
 # Step 2: User Login Form for Inventory Access
 
-# Use Streamlit secrets to retrieve user credentials
-# Example secrets structure in .streamlit/secrets.toml:
-# [credentials.user1]
-# username = "user1"
-# password = "password1"
-#
-# [credentials.user2]
-# username = "user2"
-# password = "password2"
-#
-# [credentials.user3]
-# username = "user3"
-# password = "password3"
 
 def get_user_credentials():
     """Extract credentials from Streamlit secrets."""
@@ -47,7 +34,7 @@ def get_user_credentials():
     for user_key in st.secrets["credentials"]:
         user_info = st.secrets["credentials"][user_key]
         credentials[user_info["username"]] = {
-            "password": user_info["password"]
+            "password": user_info["password"]  # We only need to check the password now
         }
     return credentials
 
