@@ -1,0 +1,6 @@
+item_name,price,units_sold,units_left,cost_price,reorder_point,description
+Toothpaste,3.5,1,9,2.0,5,Minty toothpaste for oral hygiene
+Hand Sanitizer (small),2.0,2,13,1.2,8,Small sanitizer bottle for on-the-go
+Pain Relievers (pack),5.0,1,5,3.0,3,Over-the-counter pain relief medication
+Bandages (box),3.0,0,10,2.0,5,Box of adhesive bandages for minor cuts
+Sunscreen (small),5.5,6,5,3.5,3,Small bottle of sunscreen for sun protection
