@@ -3,6 +3,29 @@ import pandas as pd
 import math
 from pathlib import Path
 
+def verify_credentials(input_username, input_password):
+    stored_username = st.secrets["credentials"]["username"]
+    stored_password = st.secrets["credentials"]["password"]
+    return input_username == stored_username and input_password == stored_password
+
+# Password Protection UI
+def login():
+    st.title("Login to Access the GDP Dashboard")
+
+    # Input fields for username and password
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    # When the login button is pressed, verify credentials
+    if st.button("Login"):
+        if verify_credentials(username, password):
+            st.success("Login successful!")
+            return True
+        else:
+            st.error("Incorrect username or password. Please try again.")
+            return False
+
+
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
     page_title='GDP dashboard',
