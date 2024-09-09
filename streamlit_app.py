@@ -13,7 +13,7 @@ st.set_page_config(page_title="GDP and Inventory Dashboard", page_icon=":earth_a
 def get_gdp_data():
     """Fetch and prepare GDP data."""
     # Use a relative path to the CSV file containing GDP data
-    gdp_file = Path(__file__).parent / "gdp_data.csv"
+    gdp_file = Path(__file__).parent / "data" / "gdp_data.csv"
     raw_gdp_df = pd.read_csv(gdp_file)
 
     MIN_YEAR = 1960
@@ -108,7 +108,7 @@ if st.button("Login"):
         st.success(f"Welcome {username}!")
 
         # Load inventory data based on the username (e.g., user1.csv, user2.csv)
-        inventory_file = Path(__file__).parent / f"{username}.csv"
+        inventory_file = Path(__file__).parent / "data" / f"{username}.csv"
         try:
             inventory_df = pd.read_csv(inventory_file)
 
